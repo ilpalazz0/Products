@@ -1,0 +1,38 @@
+th {
+    border: solid 2px black;
+    text-align: center;
+    width: 200px;
+
+}
+
+td {
+    /*border: solid 2px black;*/
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+
+table {
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    transition: transform .1s;
+    width: 100px;
+    margin: 0 auto;
+    border: solid;
+  }
+  
+  img:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.5); 
+  }

@@ -1,0 +1,66 @@
+img {
+    padding: 50px;
+    transition: transform .1s;
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0 auto;
+    object-fit: cover;
+    
+}
+  
+img:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.8); 
+}
+
+#info {
+    display: block;
+    text-align: center;
+}
+
+
+#product {
+    background-color: rgb(238, 238, 238);
+    text-align: center;
+    display: block;
+    margin: 2px;
+    width: 300px;
+    height: 400px;
+}
+
+p {
+
+    margin: -2px;
+}
+
+#thumbnail {
+    height: 200px;
+    display: inline-block;
+    border: solid black;
+}
+
+#title {
+    font-size: 1.5em;
+    display: inline-block;
+    border: solid brown;
+}
+
+#price {
+    font-size: 1.4em;
+    margin-bottom: 4px;
+    display: inline-block;
+    border: solid red;
+}
+
+#category {
+    border: solid blue;
+}
+
+#discount {
+    border: solid yellow;
+}
+
+#stock {
+    border: solid green;
+}

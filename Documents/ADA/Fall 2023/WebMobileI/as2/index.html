@@ -8,20 +8,27 @@
     <link rel="stylesheet" href="/style/global.css" />
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Discount</th>
-                <th>Stock</th>
-                <th>Category</th>
-            </tr>
-        </thead>
-        <tbody id="data">
+    <!-- Filter -->
+    <div id="filter">
+    <select onchange="Filter(this.value)">
+        <option value='all'>All items</option>
+        <option value='smartphones'>Smartphones</option>
+        <option value='laptops'>Laptops</option>
+        <option value='fragrances'>Fragrances</option>
+        <option value='skincare'>Skincare</option>
+        <option value='groceries'>Groceries</option>
+        <option value='home-decoration'>Home decoration</option>
+    </select>   
+    </div>
+    <!-- Search -->
+    <div id="search">
+        <input type="text" id="input" onkeyup="Search()" placeholder="Search for items...">
 
-        </tbody>
-    </table>
+            <!-- Product List -->
+            <div id="info">
+
+            </div>
+    </div>
+
 </body>
 </html>

@@ -25,4 +25,4 @@ fetch(link)
             document.querySelector('#info').insertAdjacentHTML('beforeend', markup);
 
         })
-    .catch(error => console.log(error));
+.catch(error => console.log(error));

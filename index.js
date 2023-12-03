@@ -8,7 +8,7 @@ fetch("https://dummyjson.com/products")
      
             a = products.price;
             b = products.discountPercentage;
-            const markup = 
+            const profiles = 
             `<div id="product" class="${products.category}" onclick=window.open('info.html?id=${products.id}'),'_blank'>
 
             <p id="thumbnail"><img src = '${products.thumbnail}' alt='Image of ${products.title}'></p>
@@ -20,7 +20,12 @@ fetch("https://dummyjson.com/products")
 
             </div>`;
 
-            document.querySelector('#info').insertAdjacentHTML('beforeend', markup);
+            const list = `<li id="list-item" style="display: none"><a href="info.html?id=${products.id}" target='_blank'>${products.title}<p class="hidden-details">${products.category}</p><p class="hidden-details">${products.description}</p></a></li>`
+
+            document.querySelector('#product-list').insertAdjacentHTML('beforeend', list);
+            document.querySelector('#info').insertAdjacentHTML('beforeend', profiles);
+
+
 
         });
     })
@@ -53,23 +58,23 @@ const Filter = (cat) => {
     }
 }
 
-function myFunction() {
-    // Declare variables
+const myFunction = () => {
+    
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('input');
     filter = input.value.toUpperCase();
-    ul = document.getElementById("info");
-    li = ul.getElementsByTagName('p');
+    ul = document.getElementById("product-list");
+    li = ul.getElementsByTagName('li');
   
-    // Loop through all list items, and hide those who don't match the search query
-    let obj = document.querySelectorAll("#product")
+
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      if (txtValue.toUpperCase().indexOf(filter) > -1 && filter != '') {
         li[i].style.display = "";
       } else {
         li[i].style.display = "none";
       }
     }
   }
+

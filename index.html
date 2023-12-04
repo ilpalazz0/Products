@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="style/global.css"/>
 </head>
 <body>
+
     <!-- Filter -->
     <div id="filter">
-    <select onchange="Filter(this.value)">
+    <select onchange="Filter(this.value)" id ="select-options">
         <option value='all'>All items</option>
-        <option value='smartphones'>Smartphones</option>
-        <option value='laptops'>Laptops</option>
-        <option value='fragrances'>Fragrances</option>
-        <option value='skincare'>Skincare</option>
-        <option value='groceries'>Groceries</option>
-        <option value='home-decoration'>Home decoration</option>
+
+
     </select>   
     </div>
+
     <!-- Search -->
     <div id="search-bar">
-    <input type="text" id="input" onkeyup="myFunction()" placeholder="Search for items..">
+    <input type="text" id="input" onkeyup="handleSearch()" placeholder="Search for items..">
 
     <ul id="product-list">
 

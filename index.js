@@ -22,7 +22,14 @@ fetch(`https://dummyjson.com/products?limit=100`)
 
             </div>`;
 
-            const list = `<li id="list-item" style="display: none"><a href="info.html?id=${products.id}" target='_blank'>${products.title}<p class="hidden-details">${products.category}</p><p class="hidden-details">${products.description}</p></a></li>`
+            const list = 
+            `<li id="list-item" style="display: none">
+            <a href="info.html?id=${products.id}" target='_blank' ">
+            ${products.title}
+            <p class="hidden-details">${products.category}</p>
+            <p class="hidden-details">${products.description}</p>
+            </a>
+            </li>`
 
             document.querySelector('#product-list').insertAdjacentHTML('beforeend', list);
             document.querySelector('#info').insertAdjacentHTML('beforeend', profiles);
@@ -37,6 +44,7 @@ fetch("https://dummyjson.com/products/categories")
             let i=0;
             data.forEach(category => {
                 optionValue = data[i];
+
                 const filters = `<option value='${data[i]}'>${optionValue[0].toUpperCase()+optionValue.slice(1)}</option>`
     
                 document.querySelector('#select-options').insertAdjacentHTML('beforeend', filters);
@@ -57,6 +65,7 @@ const Mult = (a,b) => {
 const Filter = (cat) => {
 
     let obj = document.querySelectorAll("#product")
+    
     if(cat != 'all') {
 
         obj.forEach(hide => {
@@ -85,7 +94,7 @@ const handleSearch = () => {
     li = ul.getElementsByTagName('li');
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
+        txtValue = a.textContent;
         if (txtValue.toUpperCase().indexOf(filter) > -1 && filter != '') {
             li[i].style.display = "";
         } else {
